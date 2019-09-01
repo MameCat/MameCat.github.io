@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="utf-8" />
+        <title>pelicanでブログの大地へ！</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">NOTE </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/zui-chu-no1bu.html">最初の1歩</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/GitHub_blog.html" rel="bookmark"
+           title="Permalink to pelicanでブログの大地へ！">pelicanでブログの大地へ！</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-08-31T00:00:00+09:00">
+                Published: 土 31 8月 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/mamecat.html">mameCat</a>
+        </address>
+<p>In <a href="/category/zui-chu-no1bu.html">最初の1歩</a>.</p>
+<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/python.html">python</a> <a href="/tag/tou-gao.html">投稿</a> </p>
+</footer><!-- /.post-info -->      <h1>先を見越して</h1>
+<p>VScodeをインストールしておこう！
+Notepad++等に比べてPreviewで全体を把握できるので書きやすくかつ見やすいのでオススメです！</p>
+<p>https://code.visualstudio.com/</p>
+<h1>インストール</h1>
+<p>anaconda promptを使えばpathの編集をしなくてもpelicanのインストールができる（windows）</p>
+<ol>
+<li>初めに</li>
+<li>次の工程 </li>
+</ol>
+<h2>1. 初めに</h2>
+<p>PIPのバージョンをあげてからインストールすることおすすめ。</p>
+<div class="highlight"><pre><span></span>&gt;python -m pip install --upgrade pip
+</pre></div>
+
+
+<h2>2. pericanのインストール</h2>
+<div class="highlight"><pre><span></span>pip install pelican markdown
+</pre></div>
+
+
+<h2>3. 初期設定</h2>
+<p>作っておいたディレクトリに飛んで実行</p>
+<div class="highlight"><pre><span></span>&gt;pelican-quickstart
+</pre></div>
+
+
+<p>パラメータの設定</p>
+<div class="highlight"><pre><span></span>&gt; Where do you want to create your new web site? [.] .
+&gt; What will be the title of this web site? NOTE
+&gt; Who will be the author of this web site? mameCat
+&gt; What will be the default language of this web site? [Japanese] ja
+&gt; Do you want to specify a URL prefix? e.g., https://example.com   (Y/n) n
+&gt; Do you want to enable article pagination? (Y/n) Y
+&gt; How many articles per page do you want? [10] 10
+&gt; What is your time zone? [Europe/Paris] Asia/Tokyo
+&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? (Y/n) Y
+&gt; Do you want to upload your website using FTP? (y/N) N
+&gt; Do you want to upload your website using SSH? (y/N) N
+&gt; Do you want to upload your website using Dropbox? (y/N) N
+&gt; Do you want to upload your website using S3? (y/N) N
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) N
+&gt; Do you want to upload your website using GitHub Pages? (y/N) y
+&gt; Is this your personal page (username.github.io)? (y/N) y
+Done.
+</pre></div>
+
+
+<h2>4. 記事にしてみよう</h2>
+<p>VScodeで実際に記事を書いてみる。
+contentに拡張子.mdでファイルをあらかじめ保存しておきVScodeでその中身を書いていきます。</p>
+<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">pelicanでブログの大地へ</span><span class="err">！</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">31</span>
+<span class="n">Category</span><span class="o">:</span> <span class="err">最初の</span><span class="mi">1</span><span class="err">歩</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">python</span><span class="o">,</span> <span class="err">投稿</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">GitHub_blog</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">mameCat</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="err">インストールから公開まで</span>
+
+<span class="err">#</span> <span class="err">先を見越して</span>
+<span class="n">VScodeをインストールしておこう</span><span class="err">！</span>
+<span class="n">Notepad</span><span class="o">++</span><span class="err">等に比べて</span><span class="n">Previewで全体を把握できるので書きやすくかつ見やすいのでオススメです</span><span class="err">！</span>
+
+<span class="n">https</span><span class="o">://</span><span class="n">code</span><span class="o">.</span><span class="na">visualstudio</span><span class="o">.</span><span class="na">com</span><span class="o">/</span>
+</pre></div>
+
+
+<h2>5.</h2>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
