@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>NOTE</title>
+
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+
+        <meta name="tags" contents="JS" />
+        <meta name="tags" contents="HTML" />
+        <meta name="tags" contents="data" />
+
+
+			<meta property="og:locale" content="ja">
+		<meta property="og:site_name" content="NOTE">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="/JS_pra.html">
+	<meta property="og:title" content="JSを使って色々してみる！">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/">
+	<meta property="article:published_time" content="2020-09-22 00:00:00+09:00">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">NOTE</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/theme/images/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>JSを使って色々してみる！</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/mamecat.html">mameCat</a>
+                             on 火 22 9月 2020
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <h1>実装環境</h1>
+<p>VScode</p>
+<h2>0.アウトライン</h2>
+<ol>
+<li>
+<p>jquely</p>
+</li>
+<li>
+<p>JS外部から呼び出し</p>
+</li>
+<li>
+<p>JS時刻の取り方</p>
+</li>
+<li>
+<p>JS・UNIXTIMEへの変換</p>
+</li>
+<li>
+<p>ケルビンー＞摂氏</p>
+</li>
+<li>
+<p>logの出し方</p>
+</li>
+<li>
+<p>文字の出し方</p>
+</li>
+<li>
+<p>画像の出し方</p>
+</li>
+<li>
+<p>繰り返し処理の方法と豆</p>
+</li>
+</ol>
+<h2>1. jquely</h2>
+<p>htmlでjqueryを呼び出す際はhead内のmeta,titleに続いて先頭であると他の外部からJSを呼び出した場合そのJSで
+jqueryを扱うならその方が望ましい。用は上から順に呼び出されるためである。</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>好きなタイトル<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://code.jquery.com/jquery-3.2.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;読み込みたいJS.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;読み込みたいJS.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2>2.  JS外部から呼び出し</h2>
+<p>htmlファイルと同じディレクトリでJSを読み込むならこれ。head内に記述する。１のjQueryにも書いてあるので参考に。</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>好きなタイトル<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;読み込みたいJS.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2>3. JS時刻の取り方</h2>
+<p>JSファイルにおいて。（先頭に０がつくよう整地する関数も付属）</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">set2fig</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 桁数が1桁だったら先頭に0を加えて2桁に調整する</span>
+    <span class="kd">var</span> <span class="nx">ret</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="nx">num</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span> <span class="p">{</span> <span class="nx">ret</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">num</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+<span class="kd">var</span> <span class="nx">nowTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">nowHour</span> <span class="o">=</span> <span class="nx">set2fig</span><span class="p">(</span> <span class="nx">nowTime</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nowMin</span>  <span class="o">=</span> <span class="nx">set2fig</span><span class="p">(</span> <span class="nx">nowTime</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span> <span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nowSec</span>  <span class="o">=</span> <span class="nx">set2fig</span><span class="p">(</span> <span class="nx">nowTime</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="p">);</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;現在時刻は、&quot;</span> <span class="o">+</span> <span class="nx">nowHour</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="nx">nowMin</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="nx">nowSec</span> <span class="o">+</span> <span class="s2">&quot; です。&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<h2>4. JS・UNIXTIMEへの変換</h2>
+<p>getTimeの場合ミリ秒単位なので秒単位に変換する必要がある。</p>
+<div class="highlight"><pre><span></span>var date = new Date() ;
+
+// UNIXタイムスタンプを取得する (ミリ秒単位)
+var unixsec = date.getTime() ;
+
+// UNIXタイムスタンプを取得する (秒単位)
+var unixtime = Math.floor( unixsec / 1000 ) ;
+</pre></div>
+
+
+<h2>5. ケルビンー＞摂氏</h2>
+<p>小数点をどこまで表示させたいかという話。</p>
+<p>ケルビン-273.15で温度℃になる
+小数第一までをJSで表現するには　制限したい値<em>10/10.0 。<br>
+もし小数第ｎまでにするなら　(制限したい値</em>(10^n))/(10.0^n)</p>
+<div class="highlight"><pre><span></span>var tmp=Math.round((kelvin-273.15)*10)/10.0;
+</pre></div>
+
+
+<h2>6. logの出し方</h2>
+<p>変数exampleをコンソールにlogを出すには。</p>
+<div class="highlight"><pre><span></span>console.log(example);
+</pre></div>
+
+
+<p>もしウェブで動かしているならデベロッパーツールのコンソールタブに表示される。</p>
+<h2>7. 文字の出し方</h2>
+<p>外部からJSを読み込んでhtmlで表示するには<br></p>
+<p>JSファイル</p>
+<div class="highlight"><pre><span></span>$(&quot;#weathertmp&quot;).text(tmp);
+</pre></div>
+
+
+<p>html</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;weathertmp&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</pre></div>
+
+
+<h2>8.画像の出し方</h2>
+<p>JS</p>
+<div class="highlight"><pre><span></span> document.getElementById(&#39;weatherimg&#39;).innerHTML = &#39;&lt;img src=&quot;example.png&quot;&gt;&#39;;
+</pre></div>
+
+
+<p>html</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;weatherimg&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</pre></div>
+
+
+<h2>9.繰り返し処理の方法と豆</h2>
+<p>JSで繰り返し秒指定ごとにとってくるには</p>
+<div class="highlight"><pre><span></span>setInterval(function(){
+    //何かしらの処理
+},1000);
+</pre></div>
+
+
+<p>1000で1秒なのでこれに掛け算して指定秒数になるようにする。</p>
+    </article>
+
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Blog powered by <a href="http://getpelican.com">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

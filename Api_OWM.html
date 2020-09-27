@@ -2,13 +2,13 @@
 <html lang="ja">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>NOTE - Authors</title>
+        <title>NOTE</title>
 
 
         <!-- Bootstrap Core CSS -->
@@ -32,8 +32,24 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="ja">
+
+
+
+        <meta name="tags" contents="jQuery" />
+        <meta name="tags" contents="OWM" />
+        <meta name="tags" contents="data" />
+
+
+			<meta property="og:locale" content="ja">
 		<meta property="og:site_name" content="NOTE">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="/Api_OWM.html">
+	<meta property="og:title" content="openWeatherMapから情報とってくる！">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/">
+	<meta property="article:published_time" content="2020-09-22 00:00:00+09:00">
 </head>
 
 <body>
@@ -64,12 +80,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('/theme/images/home-bg.jpg')">
+        <header class="intro-header" style="background-image: url('/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by </h1>
+                        <h1>openWeatherMapから情報とってくる！</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/mamecat.html">mameCat</a>
+                             on 火 22 9月 2020
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -80,14 +101,49 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="/author/mamecat.html" rel="bookmark">
-                <h2 class="post-title">
-                    mameCat (7)
-                </h2>
-            </a>
-        </div>
-        <hr>
+    <!-- Post Content -->
+    <article>
+        <h1>実装環境</h1>
+<p>VScode</p>
+<h2>0.アウトライン</h2>
+<ol>
+<li>
+<p>OWM/APIの取り方</p>
+</li>
+<li>
+<p>APIの値に変数を使う</p>
+</li>
+</ol>
+<h2>1. OWM/APIの取り方</h2>
+<p>毎分６０回なら無料
+参考https://openweathermap.org/
+JSで処理したかったのでコードはJSファイルに書いてる。</p>
+<div class="highlight"><pre><span></span>$.get(&quot;https://api.openweathermap.org/data/2.5/weather&quot;,
+    {&quot;q&quot;:&quot;都市名&quot;, &quot;appid&quot;:&quot;もらったAPIキー&quot;},
+    function(dt){
+        //何かしらの処理
+    },
+    &quot;json&quot;
+);
+</pre></div>
+
+
+<h2>2.  APIの値に変数を使う</h2>
+<p>文字列としてではなく変数として入れてあげる。</p>
+<div class="highlight"><pre><span></span>var city = Tokyo
+
+$.get(&quot;https://api.openweathermap.org/data/2.5/weather&quot;,
+    {&quot;q&quot;:city, &quot;appid&quot;:&quot;もらったAPIキー&quot;},
+    function(dt){
+        //何かしらの処理
+    },
+    &quot;json&quot;
+);
+</pre></div>
+    </article>
+
+    <hr>
+
             </div>
         </div>
     </div>
