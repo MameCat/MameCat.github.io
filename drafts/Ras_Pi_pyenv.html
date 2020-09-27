@@ -2,13 +2,13 @@
 <html lang="ja">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>NOTE - Articles in the 買っただけじゃ始まらない。。。 category</title>
+        <title>NOTE</title>
 
 
         <!-- Bootstrap Core CSS -->
@@ -32,8 +32,25 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="ja">
+
+
+
+        <meta name="tags" contents="RaspberryPiZero" />
+        <meta name="tags" contents="python" />
+        <meta name="tags" contents="投稿" />
+        <meta name="tags" contents="pyenv" />
+
+
+			<meta property="og:locale" content="ja">
 		<meta property="og:site_name" content="NOTE">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="/drafts/Ras_Pi_pyenv.html">
+	<meta property="og:title" content="ラズパイPythonのバージョン管理">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/">
+	<meta property="article:published_time" content="2019-09-16 00:00:00+09:00">
 </head>
 
 <body>
@@ -64,12 +81,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('/theme/images/home-bg.jpg')">
+        <header class="intro-header" style="background-image: url('/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles in the 買っただけじゃ始まらない。。。 category</h1>
+                        <h1>ラズパイPythonのバージョン管理</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/mamecat.html">mameCat</a>
+                             on 月 16 9月 2019
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -80,27 +102,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="/Ras_Pi_os.html" rel="bookmark" title="Permalink to ラズパイ初期設定してみた">
-                <h2 class="post-title">
-                    ラズパイ初期設定してみた
-                </h2>
-            </a>
-                <p>インストールと初期設定</p>
-            <p class="post-meta">Posted by
-                    <a href="/author/mamecat.html">mameCat</a>
-                 on 月 09 9月 2019
-            </p>
-        </div>
-        <hr>
+    <!-- Post Content -->
+    <article>
+        <h1>ラズパイにpyenvをいれてみたよ</h1>
+<p>pyenvを導入することでpythonのバージョン管理ができる。</p>
+<h2>1. 必要なライブラリのインストール</h2>
+<p>まずはpythonのコンパイルに必要なライブラリをインストールします。</p>
+<div class="highlight"><pre><span></span>$ sudo apt install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+</pre></div>
 
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-        </li>
-    </ul>
-    Page 1 / 1
+
+<h2>2. pyenvの導入</h2>
+<p>git clone　してGitHubからpyenvをラズパイに。</p>
+<div class="highlight"><pre><span></span>$ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+</pre></div>
+
+
+<h2>3.</h2>
+    </article>
+
     <hr>
+
             </div>
         </div>
     </div>
